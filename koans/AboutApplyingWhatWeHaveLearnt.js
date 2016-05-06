@@ -40,10 +40,11 @@ describe("About Applying What We Have Learnt", function() {
       var productsICanEat = [];
 
       // /* solve using filter() & all() / any() */
-      // productsICanEat = _(products).filter(function (product){
-      //   return product.ingredients.indexOf("mushrooms") && !product.containsNuts === false;
-      // });
-      expect(productsICanEat.length).toBe(0);
+      // My code
+      productsICanEat = _(products).filter(function (product){
+        return product.ingredients.indexOf("mushrooms") && !product.containsNuts === false;
+      });
+      expect(productsICanEat.length).toBe(FILL_ME_IN);
   });
 
   /*********************************************************************************/
@@ -63,8 +64,9 @@ describe("About Applying What We Have Learnt", function() {
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
 
     var sum = 0;    /* try chaining range() and reduce() */
+    // My code
     var answer = _.range(1,1001).reduce(function (three, five) {
-        three % 3 === 0 || five % 5 === 0)
+        three % 3 === 0 || five % 5 === 0
         return three + five
       });
     expect(233168).toBe(answer);
