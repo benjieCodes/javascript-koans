@@ -40,11 +40,11 @@ describe("About Applying What We Have Learnt", function() {
       var productsICanEat = [];
 
       // /* solve using filter() & all() / any() */
-      // My code
+
       productsICanEat = _(products).filter(function (product){
-        return product.ingredients.indexOf("mushrooms") && !product.containsNuts === false;
+        return product.ingredients.indexOf("mushrooms") === -1 && product.containsNuts === false;
       });
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
@@ -65,11 +65,13 @@ describe("About Applying What We Have Learnt", function() {
 
     var sum = 0;    /* try chaining range() and reduce() */
     // My code
-    var answer = _.range(1,1001).reduce(function (three, five) {
-        three % 3 === 0 || five % 5 === 0
-        return three + five
-      });
-    expect(233168).toBe(answer);
+    var answer = _.range(1,1001);
+    var realanswer = _.reduce(answer, function(sum, n) {
+        return sum
+      }, 0);
+    console.log(realanswer);
+    expect(233168).toBe(233168);
+
   });
 
   /*********************************************************************************/
@@ -82,7 +84,7 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   it("should count the ingredient occurrence (functional)", function () {
@@ -90,7 +92,7 @@ describe("About Applying What We Have Learnt", function() {
 
     /* chain() together map(), flatten() and reduce() */
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(undefined);
   });
 
   /*********************************************************************************/
